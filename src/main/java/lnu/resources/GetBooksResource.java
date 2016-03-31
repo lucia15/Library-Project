@@ -39,7 +39,7 @@ public class GetBooksResource {
 		// s = book1.BookInfo() + "\n" + book2.BookInfo() + "\n" + book3.BookInfo() + "\n" + book4.BookInfo() + "\n" + book5.BookInfo(); 
 		// System.out.println(s);		
 
-		// SubTask B:
+		// SubTasks B and C:
 
 		ObjectMapper mapper = new ObjectMapper();
 
@@ -79,8 +79,6 @@ public class GetBooksResource {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		// SubTask C:
 
 		return s;
 	}

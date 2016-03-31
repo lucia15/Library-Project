@@ -2,12 +2,12 @@ package lnu.models;
 
 public class book {
 
-	private int id;
-	private String title;
-	private String author;
-	private String genre;
-	private String publishDate;
-	private String description;
+	public int id;
+	public String title;
+	public String author;
+	public String genre;
+	public String publishDate;
+	public String description;
 
 	// constructor
 	public book(int id, String title, String author, String genre, String publishDate, String description) {

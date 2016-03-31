@@ -9,6 +9,17 @@ public class book {
 	private String publishDate;
 	private String description;
 
+	// constructor
+	public book(int id, String title, String author, String genre, String publishDate, String description) {
+
+		this.id = id;
+		this.title = title;
+		this.author = author;
+		this.genre = genre;
+		this.publishDate = publishDate;
+		this.description = description;
+	}
+
 	public void SetId(int id) {
 		this.id = id;
 	}
@@ -31,16 +42,6 @@ public class book {
 
 	public void SetDescription(String description) {
 		this.description = description;
-	}
-
-	// constructor
-	public book(int id, String title, String author, String genre, String publishDate, String description) {
-		SetId();
-		SetTitle();
-		SetAuthor();
-		SetGenre();
-		SetPublishDate();
-		SetDescription();
 	}
 
 	public int GetId() {
