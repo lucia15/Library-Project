@@ -34,11 +34,24 @@ public class booksDAO {
     	}
 
 	private static book jaxbXMLToObject() {
+
+		try {
+			File file = new File(FILE_NAME); 		
+			FileOutputStream outputFile = new FileOutputStream(file);
+			
+			// if file doesnt exists, then create it
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+	
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	
         	try {
             		JAXBContext context = JAXBContext.newInstance(book.class);
             		Unmarshaller un = context.createUnmarshaller();
-            		book book1 = (book) un.unmarshal(new File(FILE_NAME));
+            		book book1 = (book) un.unmarshal(file);
 			System.out.println(book1.toString());
             		return book1;
 
@@ -50,6 +63,19 @@ public class booksDAO {
 	}
 
     	private static void jaxbObjectToXML(book book1) {
+
+		try {
+			File file = new File(FILE_NAME); 		
+			FileOutputStream outputFile = new FileOutputStream(file);
+			
+			// if file doesnt exists, then create it
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+	
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
  
         	try {
             		JAXBContext context = JAXBContext.newInstance(book.class);
@@ -62,7 +88,7 @@ public class booksDAO {
  
             		// Write to File
 
-            		m.marshal(book1, new File(FILE_NAME));
+            		m.marshal(book1, outputFile);
 
         	} catch (JAXBException e) {
             		e.printStackTrace();

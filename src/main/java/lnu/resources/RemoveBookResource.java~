@@ -10,7 +10,7 @@ public class RemoveBookResource {
 
 	// Assigment 2, Task 3: Implement Delete books
 
-/*	Boolean found = false;
+	Boolean found = false;
 	integer idbook = 3
 
         for (book in books){
@@ -25,5 +25,5 @@ public class RemoveBookResource {
         if (!found){
             System.out.println ("That book was not found in the Library's database!.");
         }
-*/
+
 }
