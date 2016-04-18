@@ -22,36 +22,12 @@ public class booksDAO {
 
 	private static final String FILE_NAME = "books.xml";
 
-    	public static void main(String[] args) {
-
-		book book1 = new book(1, "Foundation", "Isaac Asimov", "Science fiction", "164", "1951-08-21", "Foundation is the first novel in Isaac Asimovs Foundation Trilogy (later expanded into The Foundation Series). Foundation is a cycle of five interrelated short stories, first published as a single book by Gnome Press in 1951. Collectively they tell the story of the Foundation, an institute to preserve the best of galactic civilization after the collapse of the Galactic Empire.");		
-
-        	jaxbObjectToXML(book1);
-
-        	book bookFromFile = jaxbXMLToObject();
-        	System.out.println(bookFromFile.toString());
-
-    	}
-
 	private static book jaxbXMLToObject() {
-
-		try {
-			File file = new File(FILE_NAME); 		
-			FileOutputStream outputFile = new FileOutputStream(file);
-			
-			// if file doesnt exists, then create it
-			if (!file.exists()) {
-				file.createNewFile();
-			}
-	
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	
         	try {
             		JAXBContext context = JAXBContext.newInstance(book.class);
             		Unmarshaller un = context.createUnmarshaller();
-            		book book1 = (book) un.unmarshal(file);
+            		book book1 = (book) un.unmarshal(new File(FILE_NAME));
 			System.out.println(book1.toString());
             		return book1;
 
@@ -63,19 +39,6 @@ public class booksDAO {
 	}
 
     	private static void jaxbObjectToXML(book book1) {
-
-		try {
-			File file = new File(FILE_NAME); 		
-			FileOutputStream outputFile = new FileOutputStream(file);
-			
-			// if file doesnt exists, then create it
-			if (!file.exists()) {
-				file.createNewFile();
-			}
-	
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
  
         	try {
             		JAXBContext context = JAXBContext.newInstance(book.class);
@@ -88,7 +51,7 @@ public class booksDAO {
  
             		// Write to File
 
-            		m.marshal(book1, outputFile);
+            		m.marshal(book1, new File(FILE_NAME));
 
         	} catch (JAXBException e) {
             		e.printStackTrace();

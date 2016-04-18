@@ -11,13 +11,13 @@ public class RemoveBookResource {
 	// Assigment 2, Task 3: Implement Delete books
 
 /*	Boolean found = false;
-	integer idbook = 3
+	book booktodele = book12;
 
         for (book in books){
 
             if (idbook == getId(book)){
-                System.out.println ("The book " + GetTitle(book)  ", id"  + GetId(book) + ", by " +  GetAuthor(book) + " has been remove from the Library");
-                remove(book);
+		booktodele = null;
+                System.out.println ("The book " + GetTitle(booktodele)  ", id"  + GetId(booktodele) + ", by " +  GetAuthor(booktodele) + " has been remove from the Library");
                 found = true;
             }
         }
