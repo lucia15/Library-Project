@@ -22,11 +22,11 @@ public class booksDAO {
 
 	private static final String FILE_NAME = "books.xml";
 
-    	public static void main(String[] args) {
+    	public void method1() {
 
-		book book1 = new book(1, "Foundation", "Isaac Asimov", "Science fiction", "164", "1951-08-21", "Foundation is the first novel in Isaac Asimovs Foundation Trilogy (later expanded into The Foundation Series). Foundation is a cycle of five interrelated short stories, first published as a single book by Gnome Press in 1951. Collectively they tell the story of the Foundation, an institute to preserve the best of galactic civilization after the collapse of the Galactic Empire.");		
+		    book book1 = new book(1, "Foundation", "Isaac Asimov", "Science fiction", "164", "1951-08-21", "Foundation is the first novel in Isaac Asimovs Foundation Trilogy (later expanded into The Foundation Series). Foundation is a cycle of five interrelated short stories, first published as a single book by Gnome Press in 1951. Collectively they tell the story of the Foundation, an institute to preserve the best of galactic civilization after the collapse of the Galactic Empire.");
 
-        	jaxbObjectToXML(book1);
+			jaxbObjectToXML(book1);
 
         	book bookFromFile = jaxbXMLToObject();
         	System.out.println(bookFromFile.toString());

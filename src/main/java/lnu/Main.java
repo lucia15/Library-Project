@@ -8,10 +8,14 @@ import io.dropwizard.assets.AssetsBundle;
 
 // Import all resources
 import lnu.resources.*;
+import lnu.dao.booksDAO;
 
 public class Main extends Application<Configuration> {
 	public static void main(String[] args) throws Exception {
 		new Main().run(new String[]{"server", "config.yml"});
+		booksDAO bd = new booksDAO();
+		bd.method1();
+
 	}
 
 	@Override
