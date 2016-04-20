@@ -17,16 +17,23 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
 
 public class booksDAO {
 
-	private static final String FILE_NAME = "books.xml";
+	public static File file = new File("/vagrant/build/classes/main/lnu/resources/books.xml");
 
-    	public void method1() {
+    	public void GetBooksDAO() {
 
-		    book book1 = new book(1, "Foundation", "Isaac Asimov", "Science fiction", "164", "1951-08-21", "Foundation is the first novel in Isaac Asimovs Foundation Trilogy (later expanded into The Foundation Series). Foundation is a cycle of five interrelated short stories, first published as a single book by Gnome Press in 1951. Collectively they tell the story of the Foundation, an institute to preserve the best of galactic civilization after the collapse of the Galactic Empire.");
+		book book1 = new book(1, "Foundation", "Isaac Asimov", "Science fiction", "164", "1951-08-21", "Foundation is the first novel in Isaac Asimovs Foundation Trilogy (later expanded into The Foundation Series). Foundation is a cycle of five interrelated short stories, first published as a single book by Gnome Press in 1951. Collectively they tell the story of the Foundation, an institute to preserve the best of galactic civilization after the collapse of the Galactic Empire.");
 
-			jaxbObjectToXML(book1);
+		jaxbObjectToXML(book1);
 
         	book bookFromFile = jaxbXMLToObject();
         	System.out.println(bookFromFile.toString());
@@ -38,7 +45,7 @@ public class booksDAO {
         	try {
             		JAXBContext context = JAXBContext.newInstance(book.class);
             		Unmarshaller un = context.createUnmarshaller();
-            		book book1 = (book) un.unmarshal(new File(FILE_NAME));
+            		book book1 = (book) un.unmarshal(file);
 			System.out.println(book1.toString());
             		return book1;
 
@@ -59,10 +66,11 @@ public class booksDAO {
  
             		// Write to System.out for debugging
             		// m.marshal(book1, System.out);
- 
-            		// Write to File
 
-            		m.marshal(book1, new File(FILE_NAME));
+ 			System.out.println(book1.toString());
+
+            		// Write to File			
+            		m.marshal(book1, file);
 
         	} catch (JAXBException e) {
             		e.printStackTrace();

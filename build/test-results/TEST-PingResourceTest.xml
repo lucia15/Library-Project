@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PingResourceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-04-18T15:02:15" hostname="vagrant-ubuntu-trusty-64" time="1.028">
+<testsuite name="PingResourceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-04-19T18:55:00" hostname="vagrant-ubuntu-trusty-64" time="0.823">
   <properties/>
-  <testcase name="testGetPing" classname="PingResourceTest" time="1.028"/>
+  <testcase name="testGetPing" classname="PingResourceTest" time="0.823"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

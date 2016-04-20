@@ -24,15 +24,11 @@ import org.codehaus.jackson.map.SerializationConfig.Feature;
 @Path("/books")
 public class GetBooksResource {
 
+	booksDAO bd = new booksDAO();
+	bd.GetBooksDAO();
+
 	@GET
 	public String getBooks() {
-
-		book book1 = new book(1, "Foundation", "Isaac Asimov", "Science fiction", "164", "1951-08-21", "Foundation is the first novel in Isaac Asimovs Foundation Trilogy (later expanded into The Foundation Series). Foundation is a cycle of five interrelated short stories, first published as a single book by Gnome Press in 1951. Collectively they tell the story of the Foundation, an institute to preserve the best of galactic civilization after the collapse of the Galactic Empire.");		
-
-        	jaxbObjectToXML(book1);
-
-        	book bookFromFile = jaxbXMLToObject();
-        	System.out.println(bookFromFile.toString());
 
 		book book11 = new book(11, "1984", "George Orwell", "Science fiction", "$50", "1949-06-08", "In George Orwell's 1984, Winston Smith wrestles with oppression in Oceania, a place where the Party scrutinizes human actions with ever-watchful Big Brother. Defying a ban on individuality, Winston dares to express his thoughts in a diary and pursues a relationship with Julia. These criminal deeds bring Winston into the eye of the opposition, who then must reform the nonconformist. George Orwell's 1984 introduced the watchwords for life without freedom: BIG BROTHER IS WATCHING YOU.");
 
@@ -70,10 +66,6 @@ public class GetBooksResource {
 			s += jsonInString + "\n\n";
 
 			jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(book15);
-			System.out.println(jsonInString);
-			s += jsonInString + "\n\n";
-
-			jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(book1);
 			System.out.println(jsonInString);
 			s += jsonInString + "\n\n";
 		
