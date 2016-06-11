@@ -26,8 +26,8 @@ import javax.xml.transform.stream.StreamResult;
 
 
 public class booksDAO {
-
-	public static File file = new File("/vagrant/build/classes/main/lnu/resources/books.xml");
+/*
+	public static File file = new File("Documentos/Library-Project/build/classes/main/lnu/resources/books.xml");
 
     	public void GetBooksDAO() {
 
@@ -76,4 +76,5 @@ public class booksDAO {
             		e.printStackTrace();
         	}
     }
+*/
 }
